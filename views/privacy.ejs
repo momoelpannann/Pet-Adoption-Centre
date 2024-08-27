@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy/Disclaimer - Adopt a Dog/Cat</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+   
+    <div class="container">
+        <nav class="side-menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/find">Find a Dog/Cat</a></li>
+                <li><a href="/dog-care">Dog Care</a></li>
+                <li><a href="/cat-care">Cat Care</a></li>
+                <li><a href="/give-away">Have a Pet to Give Away</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <% if (loggedIn) { %>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } %>
+            </ul>
+        </nav>
+        <main class="content-area">
+            <section id="privacy">
+                <h2>Privacy/Disclaimer Statement</h2>
+                <p>We promise our users that their information will not be sold or misused. We take privacy seriously and will protect your personal information.</p>
+                <p>The website builder is not responsible for any incorrect information posted by a pet owner. Users are encouraged to verify the information independently.</p>
+                <p>By using this site, you agree to these terms and conditions.</p>
+            </section>
+        </main>
+    </div>
+    <%- include('partials/footer') %>
+
+    <script src="/js/date.js"></script>
+</body>
+</html>

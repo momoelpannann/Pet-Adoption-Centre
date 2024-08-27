@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Adopt a Dog/Cat</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <div class="container">
+        <nav class="side-menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/find">Find a Dog/Cat</a></li>
+                <li><a href="/dog-care">Dog Care</a></li>
+                <li><a href="/cat-care">Cat Care</a></li>
+                <li><a href="/give-away">Have a Pet to Give Away</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <% if (loggedIn) { %>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } %>
+            </ul>
+        </nav>
+        <main class="content-area">
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <form action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <br><br>
+                    <label for="student-id">Student ID:</label>
+                    <input type="text" id="student-id" name="student-id">
+                    <br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <br><br>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+                    <br><br>
+                    <input type="submit" value="Send">
+                    <input type="reset" value="Reset">
+                </form>
+            </section>
+        </main>
+    </div>
+    <%- include('partials/footer') %>
+
+    <script src="/js/date.js"></script>
+</body>
+</html>

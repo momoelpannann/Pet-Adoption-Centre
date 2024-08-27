@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Care - Adopt a Dog/Cat</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %> 
+
+    <div class="container">
+        <nav class="side-menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/find">Find a Dog/Cat</a></li>
+                <li><a href="/dog-care">Dog Care</a></li>
+                <li><a href="/cat-care">Cat Care</a></li>
+                <li><a href="/give-away">Have a Pet to Give Away</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <% if (loggedIn) { %>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } %>
+            </ul>
+        </nav>
+        <main class="content-area">
+            <section id="cat-care">
+                <h2>Cat Care</h2>
+                <h3>Basic Care</h3>
+                <p>Provide your cat with plenty of fresh water and nutritious food. Ensure your cat has a clean litter box and a comfortable place to rest.</p>
+                
+                <h3>Grooming</h3>
+                <p>Regular grooming is important to keep your cat's coat healthy and to reduce shedding. Brush your cat's fur regularly and trim their nails as needed.</p>                
+                <h3>Health</h3>
+                <p>Regular veterinary check-ups are essential for maintaining your cat's health. Keep up with vaccinations, flea control, and any necessary treatments.</p>
+                
+                <h3>Exercise and Play</h3>
+                <p>Cats need regular exercise and mental stimulation. Provide your cat with toys, climbing trees, and interactive play sessions.</p>
+                
+                <h3>Affection and Socialization</h3>
+                <p>Spend time with your cat and show them affection. Proper socialization is important for their emotional well-being.</p>
+                
+                <h3>Resources</h3>
+                <p>For more information on cat care, visit the following links:</p>
+                <ul>
+                    <li><a href="https://www.aspca.org/pet-care/cat-care" target="_blank">ASPCA Cat Care</a></li>
+                    <li><a href="https://www.humanesociety.org/resources/cat-care" target="_blank">Humane Society Cat Care</a></li>
+                    <li><a href="https://www.petmd.com/cat/care" target="_blank">PetMD Cat Care</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <%- include('partials/footer') %> <!-- Includes the footer -->
+    <script src="/js/date.js"></script>
+</body>
+</html>

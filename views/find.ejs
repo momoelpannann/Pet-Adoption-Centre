@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Dog/Cat - Adopt a Dog/Cat</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="container">
+        <nav class="side-menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/find">Find a Dog/Cat</a></li>
+                <li><a href="/dog-care">Dog Care</a></li>
+                <li><a href="/cat-care">Cat Care</a></li>
+                <li><a href="/give-away">Have a Pet to Give Away</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <main class="content-area">
+            <section id="find">
+                <h2>Find a Dog/Cat</h2>
+                <p>Use the form below to search for pets available for adoption.</p>
+                <form id="searchForm" action="/search" method="post">
+                    <label for="animal">Cat or Dog:</label>
+                    <select id="animal" name="animal">
+                        <option value="cat">Cat</option>
+                        <option value="dog">Dog</option>
+                    </select>
+                    <br><br>
+                    <label for="breed">Breed:</label>
+                    <input type="text" id="breed" name="breed">
+                    <br><br>
+                    <label for="age">Age Range:</label>
+                    <input type="text" id="age" name="age">
+                    <br><br>
+                    <label for="gender">Preferred Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="any">Any</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <br><br>
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location">
+                    <br><br>
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email">
+                    <br><br>
+                    <input type="submit" value="Search">
+                    <input type="reset" value="Reset">
+                    <p id="error-message" style="color: red;"></p>
+                </form>
+            </section>
+
+            <section id="browse-pets">
+                <h2>Available Pets for Adoption</h2>
+                <% if (typeof pets !== 'undefined' && pets.length > 0) { %>
+                    <% pets.forEach(function(pet) { %>
+                        <div class="pet">
+                            <img src="<%= pet.image %>" alt="<%= pet.name %> Image">
+                            <div class="pet-info">
+                                <h3>Name: <%= pet.name %></h3>
+                                <p>Age: <%= pet.age %></p>
+                                <p>Breed: <%= pet.breed %></p>
+                                <p>Gender: <%= pet.gender %></p>
+                                <p>Description: <%= pet.description %></p>
+                                <button>Interested</button>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p>No pets match your search criteria.</p>
+                <% } %>
+            </section>
+        </main>
+    </div>
+    <%- include('partials/footer') %>
+
+    <script src="/js/date.js"></script>
+</body>
+</html>

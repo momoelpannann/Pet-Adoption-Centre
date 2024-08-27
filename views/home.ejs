@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Adopt a Dog/Cat</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="container">
+        <nav class="side-menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/find">Find a Dog/Cat</a></li>
+                <li><a href="/dog-care">Dog Care</a></li>
+                <li><a href="/cat-care">Cat Care</a></li>
+                <li><a href="/give-away">Have a Pet to Give Away</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <% if (loggedIn) { %>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } %>
+            </ul>
+        </nav>
+        <main class="content-area">
+            <section id="home">
+                <h2>Welcome to the official website of Mo's Animal Adoption Center</h2>
+                <p>Here you can find pets available for adoption and get information on how to take care of your new friend.</p>
+            </section>
+        </main>
+    </div>
+    <%- include('partials/footer') %>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+        if (message) {
+            alert(message);
+        }
+    </script>
+</body>
+</html>

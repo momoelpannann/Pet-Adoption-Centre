@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Adopt a Dog/Cat</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main class="content-area">
+        <section id="register">
+            <h2>Register</h2>
+            <form id="registerForm" action="/register" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <p>Username can contain letters (both upper and lower case) and digits only.</p>
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <p>Password must be at least 4 characters long, contain letters and digits only, and have at least one letter and one digit.</p>
+                <br><br>
+                <input type="submit" value="Register">
+                <p style="color: red;"><%= message %></p>
+            </form>
+        </section>
+    </main>
+    <%- include('partials/footer') %>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const usernameRegex = /^[a-zA-Z0-9]+$/;
+            const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{4,}$/;
+
+            if (!usernameRegex.test(username)) {
+                event.preventDefault();
+                alert('Username can contain letters and digits only.');
+            } else if (!passwordRegex.test(password)) {
+                event.preventDefault();
+                alert('Password must be at least 4 characters long, contain letters and digits only, and have at least one letter and one digit.');
+            }
+        });
+    </script>
+</body>
+</html>

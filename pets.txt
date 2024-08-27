@@ -1,0 +1,4 @@
+1:Mo:cat:Siamese:0-1:male:yes:yes:yes:Good cat:Mohamed:momo@livve.com
+2:Mo:cat:Persian:3-7:female:yes:yes:yes:very social:Mo:mohamed@mail.com
+3:Mo:dog:Golden Retriever:1-3:male:yes:yes:yes:Very smart:Alex:alex@mail.com
+4:Mo:cat:Black Labrador:0-1:male:yes:yes:yes:Very loving:Emma:emma@mail.com

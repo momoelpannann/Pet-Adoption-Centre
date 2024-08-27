@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Care - Adopt a Dog/Cat</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <div class="container">
+        <nav class="side-menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/find">Find a Dog/Cat</a></li>
+                <li><a href="/dog-care">Dog Care</a></li>
+                <li><a href="/cat-care">Cat Care</a></li>
+                <li><a href="/give-away">Have a Pet to Give Away</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <% if (loggedIn) { %>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } %>
+            </ul>
+        </nav>
+        <main class="content-area">
+            <section id="dog-care">
+                <h2>Dog Care</h2>
+                <h3>Basic Care</h3>
+                <p>Provide your dog with plenty of fresh water and nutritious food. Ensure your dog has a comfortable place to rest and regular exercise.</p>
+                
+                <h3>Grooming</h3>
+                <p>Regular grooming is important to keep your dog's coat healthy and clean. Brush your dog's fur regularly and trim their nails as needed.</p>
+                
+                <h3>Health</h3>
+                <p>Regular veterinary check-ups are essential for maintaining your dog's health. Keep up with vaccinations, flea control, and any necessary treatments.</p>
+                
+                <h3>Exercise and Play</h3>
+                <p>Dogs need regular exercise and mental stimulation. Provide your dog with toys, walks, and interactive play sessions.</p>
+                
+                <h3>Affection and Socialization</h3>
+                <p>Spend time with your dog and show them affection. Proper socialization is important for their emotional well-being.</p>
+                
+                <h3>Resources</h3>
+                <p>For more information on dog care, visit the following links:</p>
+                <ul>
+                    <li><a href="https://www.aspca.org/pet-care/dog-care" target="_blank">ASPCA Dog Care</a></li>
+                    <li><a href="https://www.humanesociety.org/resources/dog-care" target="_blank">Humane Society Dog Care</a></li>
+                    <li><a href="https://www.petmd.com/dog/care" target="_blank">PetMD Dog Care</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <%- include('partials/footer') %>
+
+    <script src="/js/date.js"></script>
+</body>
+</html>
